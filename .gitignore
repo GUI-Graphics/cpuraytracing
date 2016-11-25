@@ -1,3 +1,9 @@
 *.o
 *.out
 *.ppm
+*.opendb
+*.db
+.vs/
+x64/
+x86/
+
