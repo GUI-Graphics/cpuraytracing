@@ -14,8 +14,9 @@ Vector3 color(const Ray& ray) {
 }
 
 int main() {
-	Film film;
-	Camera camera(film);
+	Film film(512, 256);
+	Camera camera(film, 90);
+	camera.lookAt(Vector3(0, -2, -1));
 
 	for(int i = 0; i < film.height; ++i) {
 		printf("\rrendering %5.2f%%", 100.0f * (i + 1) / film.height);

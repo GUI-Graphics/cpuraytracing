@@ -4,4 +4,4 @@ all: main.o math.o film.o camera.o
 	g++ main.o math.o film.o camera.o
 
 clean:
-	rm *.o *.out *.ppm
+	rm -f *.o *.out *.ppm
