@@ -6,7 +6,7 @@ namespace gui {
 
 	std::random_device Math::device;
 	std::mt19937 Math::generator(device());
-	std::uniform_real_distribution<float> Math::distribution(0, 10);
+	std::uniform_real_distribution<float> Math::distribution(0, 1);
 
 	Vector3 Math::randomDisk() {
 		Vector3 v;

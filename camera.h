@@ -8,6 +8,7 @@
 namespace gui {
 	class Ray;
 	class Film;
+	
 	class Camera {
 	public:
 		Camera(const Film& film, float fovy = 90);

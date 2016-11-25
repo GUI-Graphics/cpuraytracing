@@ -5,6 +5,7 @@
 
 namespace gui {
 	class Vector3;
+	
 	class Math {
 	public:
 		static float random() {
