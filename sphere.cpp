@@ -24,6 +24,7 @@ namespace gui {
 				intersection.t = t;
 				intersection.position = ray.origin + ray.direction * t;
 				intersection.normal = (intersection.position - center) / radius;
+				intersection.material = material;
 				return true;
 			}
 
@@ -32,6 +33,7 @@ namespace gui {
 				intersection.t = t;
 				intersection.position = ray.origin + ray.direction * t;
 				intersection.normal = (intersection.position - center) / radius;
+				intersection.material = material;
 				return true;
 			}
 

@@ -4,6 +4,7 @@
 #include <limits>
 
 #include "vector3.h"
+#include "material.h"
 
 namespace gui {
 	class Intersection {
@@ -15,6 +16,7 @@ namespace gui {
 		float t;
 		Vector3 position;
 		Vector3 normal;
+		Material* material;
 	};
 }
 

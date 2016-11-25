@@ -1,5 +1,4 @@
 #include "ray.h"
-#include "film.h"
 #include "camera.h"
 
 #include <stdio.h>

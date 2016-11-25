@@ -4,11 +4,11 @@
 #include <math.h>
 
 #include "math.h"
+#include "film.h"
 
 namespace gui {
 	class Ray;
-	class Film;
-	
+
 	class Camera {
 	public:
 		Camera(const Film& film, float fovy = 90);

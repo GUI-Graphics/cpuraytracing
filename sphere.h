@@ -3,6 +3,7 @@
 
 #include "shape.h"
 #include "vector3.h"
+#include "material.h"
 
 namespace gui {
 	class Ray;
@@ -10,9 +11,11 @@ namespace gui {
 
 	class Sphere : public Shape {
 	public:
-		Sphere(const Vector3& center, float radius)
-			: center(center), radius(radius)
-		{ }
+		Sphere(const Vector3& center, float radius, Material* material)
+			: center(center), radius(radius) {
+
+			this->material = material;
+		}
 
 		bool intersect(
 			const Ray& ray,

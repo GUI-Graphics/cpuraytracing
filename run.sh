@@ -1,4 +1,5 @@
 #! /bin/bash
+make clean
 make
 if [[ $? == 0 ]]; then
 	time ./a.out
