@@ -3,6 +3,7 @@
 #include "ray.h"
 #include "math.h"
 #include "film.h"
+#include "camera.h"
 #include "vector3.h"
 
 using namespace gui;
@@ -14,16 +15,17 @@ Vector3 color(const Ray& ray) {
 
 int main() {
 	Film film;
+	Camera camera(film);
 
-	float u, v;
 	for(int i = 0; i < film.height; ++i) {
-		v = 1 - (float) i / film.height * 2;
+		printf("\rrendering %5.2f%%", 100.0f * (i + 1) / film.height);
 		for(int j = 0; j < film.width; ++j) {
-			u = (float) j / film.height * 2 - 2;
-			Ray ray = Ray(Vector3(0), Vector3(u, v, -1));
+			Ray ray = camera.getRay(j, i);
 			film.pixels[i][j] = color(ray);
 		}
 	}
+
+	printf("\n");
 
 	film.gammaCorrection();
 	film.writePPM();

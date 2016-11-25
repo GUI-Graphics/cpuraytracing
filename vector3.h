@@ -163,23 +163,7 @@ namespace gui {
 		float lengthSquared() const {
 			return x * x + y * y + z * z;
 		}
-
-		static Vector3 randomSphere() {
-			Vector3 p;
-			do {
-				p = Vector3(drand48(), drand48(), drand48()) * 2 - 1;
-			} while(p.length() >= 1);
-			return p;
-		}
-
-		static Vector3 randomDisk() {
-			Vector3 p;
-			do {
-				p = Vector3(drand48(), drand48(), 0) * 2 - Vector3(1, 1, 0);
-			} while(p.length() > 1);
-			return p;
-		}
-
+		
 	public:
 		float x, y, z;
 	};

@@ -14,6 +14,9 @@ namespace gui {
 		static Vector3 randomDisk();
 		static Vector3 randomSphere();
 
+	public:
+		static const float PI;
+
 	private:
 		static std::random_device device;
 		static std::mt19937 generator;

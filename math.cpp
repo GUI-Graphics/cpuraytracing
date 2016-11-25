@@ -2,6 +2,8 @@
 #include "vector3.h"
 
 namespace gui {
+	const float Math::PI = 3.1415926f;
+
 	std::random_device Math::device;
 	std::mt19937 Math::generator(device());
 	std::uniform_real_distribution<float> Math::distribution(0, 10);
