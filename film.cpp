@@ -8,6 +8,9 @@ namespace gui {
 		pixels = new Vector3*[height];
 		for(int i = 0; i < height; ++i) {
 			pixels[i] = new Vector3[width];
+			for (int j = 0; j < width; ++j) {
+				pixels[i][j] = Vector3(0);
+			}
 		}
 	}
 
