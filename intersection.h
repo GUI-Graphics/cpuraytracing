@@ -2,11 +2,10 @@
 #define GUI_INTERSECTION_H
 
 #include <limits>
-
 #include "vector3.h"
-#include "material.h"
 
 namespace gui {
+	class Material;
 	class Intersection {
 	public:
 		Intersection() : t(std::numeric_limits<float>::max())

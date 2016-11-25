@@ -111,11 +111,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\camera.h" />
+    <ClInclude Include="..\dielectric.h" />
     <ClInclude Include="..\diffuse.h" />
     <ClInclude Include="..\film.h" />
     <ClInclude Include="..\intersection.h" />
     <ClInclude Include="..\material.h" />
     <ClInclude Include="..\math.h" />
+    <ClInclude Include="..\metal.h" />
     <ClInclude Include="..\ray.h" />
     <ClInclude Include="..\scene.h" />
     <ClInclude Include="..\shape.h" />
@@ -124,10 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\camera.cpp" />
+    <ClCompile Include="..\dielectric.cpp" />
     <ClCompile Include="..\diffuse.cpp" />
     <ClCompile Include="..\film.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\math.cpp" />
+    <ClCompile Include="..\metal.cpp" />
     <ClCompile Include="..\scene.cpp" />
     <ClCompile Include="..\sphere.cpp" />
   </ItemGroup>

@@ -1,4 +1,6 @@
 #include "ray.h"
+#include "film.h"
+#include "math.h"
 #include "camera.h"
 
 namespace gui {

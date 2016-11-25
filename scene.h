@@ -2,9 +2,7 @@
 #define GUI_SCENE_H
 
 #include <vector>
-
 #include "shape.h"
-#include "intersection.h"
 
 namespace gui {
 	class Scene : public Shape {
