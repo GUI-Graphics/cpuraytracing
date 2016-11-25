@@ -9,6 +9,9 @@ namespace gui {
 
 	class Shape {
 	public:
+		Shape(Material* material = nullptr): material(material)
+		{ }
+
 		virtual ~Shape() {
 			delete material;
 		}

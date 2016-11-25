@@ -4,8 +4,10 @@
 #include "camera.h"
 
 namespace gui {
-	Camera::Camera(const Film& film, float fovy)
+	Camera::Camera(const Film& film, float fovy, float apeture, float focal)
 		: film(film)
+		, apeture(apeture)
+		, focal(focal)
 		, position(Vector3(0))
 		, x(Vector3(1, 0, 0))
 		, y(Vector3(0, 1, 0))
@@ -16,9 +18,11 @@ namespace gui {
 	}
 
 	Ray Camera::getRay(float px, float py) const {
+		Vector3 offset = Math::randomDisk() * apeture;
+		offset = x * offset.x + y * offset.y;
 		float u = (px - film.width * 0.5f) / resolution;
 		float v = (film.height * 0.5f - py) / resolution;
-		return Ray(position, x * u + y * v - z);
+		return Ray(position + offset, x * u + y * v - z - offset / focal);
 	}
 
 	void Camera::lookAt(const Vector3& target) {

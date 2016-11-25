@@ -61,7 +61,7 @@ void initScene(Scene& scene) {
 
 int main() {
 	Film film(256, 128);
-	Camera camera(film, 20);
+	Camera camera(film, 20, 0.1f, 12);
 	camera.position = Vector3(12, 2, 3);
 	camera.lookAt(Vector3(0, 1, 0));
 

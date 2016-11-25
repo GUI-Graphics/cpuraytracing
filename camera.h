@@ -9,7 +9,7 @@ namespace gui {
 
 	class Camera {
 	public:
-		Camera(const Film& film, float fovy = 90);
+		Camera(const Film& film, float fovy = 90, float apetrure = 0, float focal = 1);
 
 		void lookAt(const Vector3& target);
 		Ray getRay(float px, float py) const;
@@ -17,6 +17,8 @@ namespace gui {
 	public:
 		const Film& film;
 		float resolution;
+		float apeture;
+		float focal;
 
 		Vector3 position;
 		Vector3 x;
