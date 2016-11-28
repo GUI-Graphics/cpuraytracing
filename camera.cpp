@@ -4,7 +4,7 @@
 #include "camera.h"
 
 namespace gui {
-	Camera::Camera(const Film& film, float fovy, float apeture, float focal)
+	Camera::Camera(Film& film, float fovy, float apeture, float focal)
 		: film(film)
 		, apeture(apeture)
 		, focal(focal)

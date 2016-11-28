@@ -9,13 +9,13 @@ namespace gui {
 
 	class Camera {
 	public:
-		Camera(const Film& film, float fovy = 90, float apetrure = 0, float focal = 1);
+		Camera(Film& film, float fovy = 90, float apetrure = 0, float focal = 1);
 
 		void lookAt(const Vector3& target);
 		Ray getRay(float px, float py) const;
 
 	public:
-		const Film& film;
+		Film& film;
 		float resolution;
 		float apeture;
 		float focal;

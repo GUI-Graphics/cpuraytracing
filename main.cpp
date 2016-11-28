@@ -6,6 +6,7 @@
 #include "ray.h"
 #include "film.h"
 #include "camera.h"
+#include "renderer.h"
 
 #include "scene.h"
 #include "sphere.h"
@@ -60,7 +61,8 @@ void initScene(Scene& scene) {
 }
 
 int main() {
-	Film film;
+	Film film(256, 128);
+
 	Camera camera(film, 20, 0.1f, 12);
 	camera.position = Vector3(12, 2, 3);
 	camera.lookAt(Vector3(0, 1, 0));
@@ -68,22 +70,8 @@ int main() {
 	Scene scene;
 	initScene(scene);
 
-	for(int i = 0; i < film.height; ++i) {
-		printf("\rrendering %5.2f%%", 100.0f * (i + 1) / film.height);
-		fflush(stdout);
-		for(int j = 0; j < film.width; ++j) {
-			for (int k = 0; k < 1000; ++k) {
-				Ray ray = camera.getRay(j + Math::random(), i + Math::random());
-				film.pixels[i][j] += color(ray, scene, 0);
-			}
-			film.pixels[i][j] *= 0.001f;
-		}
-	}
-
-	printf("\n");
-
-	film.gammaCorrection();
-	film.writePPM();
+	Renderer renderer(100);
+	renderer.render(scene, camera);
 
 	return 0;
 }
