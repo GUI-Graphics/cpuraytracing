@@ -119,6 +119,7 @@
     <ClInclude Include="..\math.h" />
     <ClInclude Include="..\metal.h" />
     <ClInclude Include="..\ray.h" />
+    <ClInclude Include="..\renderer.h" />
     <ClInclude Include="..\scene.h" />
     <ClInclude Include="..\shape.h" />
     <ClInclude Include="..\sphere.h" />
@@ -132,6 +133,7 @@
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\math.cpp" />
     <ClCompile Include="..\metal.cpp" />
+    <ClCompile Include="..\renderer.cpp" />
     <ClCompile Include="..\scene.cpp" />
     <ClCompile Include="..\sphere.cpp" />
   </ItemGroup>

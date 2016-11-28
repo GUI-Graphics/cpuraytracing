@@ -1,40 +1,18 @@
 #include <iostream>
 
 #include "math.h"
-#include "vector3.h"
-
-#include "ray.h"
 #include "film.h"
 #include "camera.h"
 #include "renderer.h"
 
 #include "scene.h"
 #include "sphere.h"
-#include "intersection.h"
 
 #include "metal.h"
 #include "diffuse.h"
 #include "dielectric.h"
 
 using namespace gui;
-
-Vector3 color(const Ray& ray, const Scene& scene, int depth) {
-	Intersection intersection;
-	if(scene.intersect(ray, 0, 10000, intersection)) {
-		Ray scattered;
-		Vector3 attenuation;
-		if(intersection.material->scatter(
-			ray, intersection, attenuation, scattered) && depth < 30) {
-			return attenuation * color(scattered, scene, ++depth);
-		} else {
-			return Vector3(0);
-		}
-	} else {
-		Vector3 unit = ray.direction;
-		float k = (unit.identity().y + 1) * 0.5f;
-		return Vector3(1) * (1 - k) + Vector3(0.5f, 0.7f, 1) * k;
-	}
-}
 
 void initScene(Scene& scene) {
 	auto& shapes = scene.shapes;

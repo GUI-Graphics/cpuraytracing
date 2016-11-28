@@ -7,13 +7,14 @@ namespace gui {
 
 	class Renderer {
 	public:
-		Renderer(int samples) : smaples(samples)
+		Renderer(int samples) : samples(samples)
 		{ }
 
-		void render(const Scene& scene, Camera& camera);
+		void render(const Scene& scene, Camera& camera) const;
+		Vector3 radiance(const Ray& ray, const Scene& scene, int depth) const;
 
 	public:
-		int smaples;
+		int samples;
 	};
 }
 
