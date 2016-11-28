@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\aabb.h" />
     <ClInclude Include="..\camera.h" />
     <ClInclude Include="..\dielectric.h" />
     <ClInclude Include="..\diffuse.h" />
@@ -126,6 +127,7 @@
     <ClInclude Include="..\vector3.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\aabb.cpp" />
     <ClCompile Include="..\camera.cpp" />
     <ClCompile Include="..\dielectric.cpp" />
     <ClCompile Include="..\diffuse.cpp" />
