@@ -15,6 +15,7 @@ namespace gui {
 
 	public:
 		int samples;
+		static long long nIntersects;
 	};
 }
 

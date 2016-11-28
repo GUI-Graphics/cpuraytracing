@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "math.h"
 #include "film.h"
 #include "camera.h"

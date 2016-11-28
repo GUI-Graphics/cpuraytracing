@@ -7,6 +7,8 @@
 #include "intersection.h"
 
 namespace gui {
+	long long Renderer::nIntersects = 0;
+
 	Vector3 Renderer::radiance(const Ray& ray, const Scene& scene, int depth) const {
 		Intersection intersection;
 		if (scene.intersect(ray, 0, 10000, intersection)) {
@@ -15,12 +17,10 @@ namespace gui {
 			if (intersection.material->scatter(
 				ray, intersection, attenuation, scattered) && depth < 30) {
 				return attenuation * radiance(scattered, scene, ++depth);
-			}
-			else {
+			} else {
 				return Vector3(0);
 			}
-		}
-		else {
+		} else {
 			Vector3 unit = ray.direction;
 			float k = (unit.identity().y + 1) * 0.5f;
 			return Vector3(1) * (1 - k) + Vector3(0.5f, 0.7f, 1) * k;
@@ -41,7 +41,8 @@ namespace gui {
 			}
 		}
 
-		printf("\n");
+		printf("\nstatistical data:\n");
+		printf("num intersects: %lld\n", nIntersects);
 
 		camera.film.gammaCorrection();
 		camera.film.writePPM();
